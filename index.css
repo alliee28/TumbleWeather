@@ -1,0 +1,151 @@
+@charset "UTF-8";
+/* CSS Document */
+.container {
+    display: grid;
+    grid-template-columns: 1f 1f 1f;
+    grid-template-rows: 2fr 7fr 12fr 2fr;
+    grid-template-areas:
+    "header header header"
+    "snapshot snapshot snapshot"
+    "hours quote week"    
+    "footer footer footer"
+}
+
+.grid-header {
+    grid-area: header;
+    background: white;
+    height: 100px;
+}
+
+.grid-snapshot h1 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100px;
+    padding: 0px 0px 0px 20px;
+    margin-bottom: 4px;
+}
+
+.grid-snapshot h2 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.grid-hours {
+    gird-area: hours;
+    background: #00BAD9;
+    border: 40px solid #FFCC6C;
+    border-right: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.grid-hours caption {
+    background: #FFCC6C;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100px;
+    font-size: 25px;
+    padding: 0px 0px 5px 0px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    font-family: 'Open Sans', sans-serif;
+    padding: 19px 0px 5px 0px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #91E4FF;
+}
+
+.grid-quote {
+    grid-area: quote;
+    border: 40px solid #FFCC6C;
+    border-right: none;
+    border-left: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: url("img/quotebubble.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.grid-week {
+    grid-area: week;
+    background: #00BAD9;
+    border: 40px solid #FFCC6C;
+    border-left: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.grid-week caption {
+    background: #FFCC6C;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100px;
+    font-size: 25px;
+    padding: 0px 0px 5px 0px;
+}
+
+.grid-footer {
+    grid-area: footer;
+    background: #00BAD9;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    line-height: 10px;
+    padding: 20px 0px 0px 0px;
+}
+
+.grid-header { float: right; }
+.grid-header ul { list-style: none; margin: 0px; float: right; }
+.grid-header li { float: left; padding: 0px;  margin: 0px; height: 105px; position: relative; transition: all 0.3s ease; }
+.grid-header li a { padding: 42px 41px 36px 41px; font-size: 16px; color: #000000; font-family: 'Open Sans', sans-serif; font-weight: 800; text-decoration: none; display: block; -webkit-transition: all 0.3s ease; transition: all 0.3s ease; }
+.grid-header li span { 
+	border-bottom: solid 5px #ff9000;
+	background: rgba(1,80,48,1);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(56,87,122,1)), color-stop(0%, rgba(56,87,122,1)), color-stop(0%, rgba(56,87,122,1)), color-stop(100%, rgba(44,68,94,1)));
+	background: linear-gradient(to bottom, rgba(243,116,35,1) 0%, rgba(155,64,16,1) 0%, rgba(243,116,35,1) 0%, rgba(155,64,16,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#38577a', endColorstr='#2c445e', GradientType=0 );
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -10;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+.grid-header li:hover span, .grid-header li.active span {
+	opacity: 1;
+}
+
+body .site-logo { padding: 25px 0px 50px 20px; width: 100px; float: left; transition: all 0.3s;  }
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: blue;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        "header"
+        "snapshot"
+        "hours"
+        "quote"
+        "week"    
+        "footer"    
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    body {
+        background-color: white;
+    }
+}
